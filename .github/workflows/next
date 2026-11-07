@@ -1,0 +1,1333 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="آفاق منصة تعليمية جزائرية تجمع الطالب والأستاذ وتدعم التعلم والبحث العلمي بالذكاء الاصطناعي.">
+<meta name="theme-color" content="#0a4339">
+<title>آفاق | فضاء التعلم والبحث</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green: #0e5a4f;
+    --dark: #0a4339;
+    --gold: #b8832f;
+    --bg: #f6f3ec;
+    --white: #fff;
+    --text: #203b35;
+    --muted: #71817a;
+    --border: #e8e7df;
+    --shadow: 0 12px 35px rgba(10,67,57,.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+button, input, select {
+    font-family: inherit;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 21px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: .25s;
+}
+
+.btn-primary {
+    background: var(--green);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border-color: var(--green);
+    color: var(--green);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--green);
+    color: white;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* HEADER */
+
+header {
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--dark);
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+    background: var(--green);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo h2 {
+    font-size: 22px;
+}
+
+.logo small {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.3;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    font-size: 13px;
+    color: #53665e;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--green);
+    font-size: 25px;
+}
+
+/* HERO */
+
+.hero {
+    padding: 90px 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(184,131,47,.12), transparent 28%),
+        radial-gradient(circle at 90% 80%, rgba(14,90,79,.10), transparent 30%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    color: var(--dark);
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 600px;
+    margin-bottom: 27px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-card {
+    background: white;
+    padding: 27px;
+    border-radius: 23px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.hero-card-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.status {
+    background: #e5f3e9;
+    color: #257449;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.feature-mini {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.feature-mini:last-child {
+    border: none;
+}
+
+.mini-icon, .service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: #edf4ef;
+    font-size: 24px;
+}
+
+.feature-mini strong {
+    display: block;
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.feature-mini small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 80px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading span {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    color: var(--dark);
+    font-size: 31px;
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* SERVICES */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 27px;
+    border-radius: 18px;
+    transition: .25s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.service-card h3 {
+    color: var(--dark);
+    font-size: 18px;
+    margin: 15px 0 8px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--dark);
+    color: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 17px;
+}
+
+.about p {
+    color: #d2e1da;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.about-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.about-box {
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(255,255,255,.06);
+    border-radius: 15px;
+}
+
+.about-box strong {
+    display: block;
+    color: #e8bd72;
+    font-size: 18px;
+}
+
+/* USERS */
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 23px;
+}
+
+.audience-card {
+    background: white;
+    padding: 30px;
+    border-radius: 19px;
+    border: 1px solid var(--border);
+}
+
+.audience-card h3 {
+    color: var(--dark);
+    font-size: 21px;
+    margin: 12px 0;
+}
+
+.audience-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* LOGIN */
+
+.login-section {
+    background: #f0eee6;
+}
+
+.login-card {
+    max-width: 480px;
+    margin: auto;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 21px;
+    padding: 33px;
+    box-shadow: var(--shadow);
+}
+
+.login-card h2 {
+    text-align: center;
+    color: var(--dark);
+}
+
+.login-description {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+.login-card button {
+    width: 100%;
+}
+
+.form-message {
+    display: none;
+    padding: 12px;
+    border-radius: 9px;
+    margin-top: 14px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.form-switch {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 18px;
+    color: var(--muted);
+}
+
+.form-switch button {
+    width: auto;
+    background: none;
+    border: none;
+    color: var(--green);
+    font-weight: 700;
+}
+
+/* SUBSCRIPTIONS */
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.plan-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 19px;
+    padding: 28px 22px;
+    text-align: center;
+    position: relative;
+}
+
+.plan-card.featured {
+    border: 2px solid var(--gold);
+}
+
+.plan-card h3 {
+    color: var(--dark);
+    font-size: 21px;
+}
+
+.plan-price {
+    color: var(--green);
+    font-size: 31px;
+    font-weight: 700;
+    margin: 13px 0;
+}
+
+.plan-price small {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.plan-card ul {
+    list-style: none;
+    text-align: right;
+    margin: 20px 0;
+}
+
+.plan-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.plan-card button {
+    width: 100%;
+}
+
+.plan-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 23px;
+}
+
+/* CTA */
+
+.cta-box {
+    background: #f0e9d9;
+    border: 1px solid #e5d8bd;
+    border-radius: 23px;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.cta-box h2 {
+    color: var(--dark);
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #082f29;
+    color: white;
+    padding: 33px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+footer p, footer a {
+    color: #c5d6ce;
+    font-size: 12px;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background: rgba(0,0,0,.55);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    width: min(420px,100%);
+    text-align: center;
+}
+
+.modal-content h3 {
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.modal-content p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    margin: 5px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+    .nav-links {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .nav-actions .btn {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width:760px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        right: 0;
+        left: 0;
+        background: white;
+        padding: 20px;
+        flex-direction: column;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero-grid, .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+}
+
+@media(max-width:540px) {
+    .services-grid, .audience-grid, .about-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 58px 0;
+    }
+
+    .nav-actions .btn {
+        padding: 7px 9px;
+        font-size: 11px;
+    }
+
+    .logo h2 {
+        font-size: 19px;
+    }
+
+    .login-card {
+        padding: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+
+    <a href="#home" class="logo">
+        <div class="logo-icon">آ</div>
+        <div>
+            <h2>آفاق</h2>
+            <small>فضاء التعلم والبحث</small>
+        </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="القائمة">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">الخدمات</a>
+        <a href="#about">عن المنصة</a>
+        <a href="#audience">فضاءاتنا</a>
+        <a href="#subscriptions">الاشتراكات</a>
+        <a href="#login">الحساب</a>
+    </nav>
+
+    <div class="nav-actions">
+        <a href="#login" class="btn btn-outline">دخول</a>
+        <a href="#subscriptions" class="btn btn-primary">الاشتراك</a>
+    </div>
+
+</div>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+    <div>
+        <div class="eyebrow">منصة تعليمية بطموح جزائري</div>
+
+        <h1>
+            آفاق جديدة نحو
+            <span>تعليم أكثر ذكاءً</span>
+        </h1>
+
+        <p>
+            منصة آفاق فضاء تعليمي رقمي يجمع الطالب والأستاذ
+            في بيئة واحدة، ويسهل الوصول إلى المعرفة والمراجع
+            الأكاديمية، ويوظف الأدوات الذكية لدعم التعلم والبحث.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary">اكتشف خدماتنا</a>
+            <a href="#login" class="btn btn-outline">ابدأ رحلتك</a>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <div class="hero-card-top">
+            <strong>فضاء المعرفة</strong>
+            <span class="status">رؤية تعليمية</span>
+        </div>
+
+        <div class="feature-mini">
+            <div class="mini-icon">📚</div>
+            <div>
+                <strong>المكتبة الأكاديمية</strong>
+                <small>مصادر ومراجع للبحث والتعلم</small>
+            </div>
+        </div>
+
+        <div class="feature-mini">
+            <div class="mini-icon">🤖</div>
+            <div>
+                <strong>المساعد الذكي</strong>
+                <small>توضيح المفاهيم والدروس</small>
+            </div>
+        </div>
+
+        <div class="feature-mini">
+            <div class="mini-icon">📖</div>
+            <div>
+                <strong>المعجم الأكاديمي</strong>
+                <small>مصطلحات وتعريفات علمية</small>
+            </div>
+        </div>
+
+        <div class="feature-mini">
+            <div class="mini-icon">🎓</div>
+            <div>
+                <strong>التواصل الجامعي</strong>
+                <small>تقريب الطالب من الأستاذ</small>
+            </div>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+<div class="container">
+
+    <div class="section-heading">
+        <span>خدماتنا</span>
+        <h2>خدمات آفاق التعليمية</h2>
+        <p>أدوات متكاملة تجعل رحلة التعلم والبحث أكثر سهولة.</p>
+    </div>
+
+    <div class="services-grid">
+
+        <article class="service-card">
+            <div class="service-icon">🤖</div>
+            <h3>المساعد الذكي</h3>
+            <p>دعم الفهم وتوضيح الدروس والمفاهيم التعليمية.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-icon">📚</div>
+            <h3>المعجم الذكي</h3>
+            <p>بنك للمصطلحات والتعريفات الأكاديمية.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-icon">🔎</div>
+            <h3>البحث العلمي</h3>
+            <p>المساعدة في الوصول إلى المصادر والمراجع.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-icon">💬</div>
+            <h3>التواصل الجامعي</h3>
+            <p>تسهيل التواصل الأكاديمي بين الطالب والأستاذ.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-icon">📝</div>
+            <h3>الدروس والموارد</h3>
+            <p>فضاء لمشاركة الملفات والدروس والمواد التعليمية.</p>
+        </article>
+
+        <article class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>متابعة الطلبات</h3>
+            <p>تنظيم الاستفسارات والطلبات الأكاديمية.</p>
+        </article>
+
+    </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+<div class="container about-grid">
+
+    <div>
+        <div class="eyebrow">من نحن؟</div>
+        <h2>آفاق... المعرفة أقرب إليك</h2>
+
+        <p>
+            انطلقت فكرة آفاق من الحاجة إلى بيئة تعليمية رقمية
+            تستجيب لانشغالات الطالب الجامعي وتدعم الأستاذ
+            في مشاركة المعرفة والموارد التعليمية.
+        </p>
+
+        <p>
+            نطمح إلى بناء تجربة تجمع التكنولوجيا والبحث العلمي
+            والتواصل الأكاديمي بما ينسجم مع واقع الجامعة الجزائرية.
+        </p>
+
+        <a href="#subscriptions" class="btn btn-outline"
+           style="border-color:#e8bd72;color:#e8bd72">
+            استكشف الخطط
+        </a>
+    </div>
+
+    <div class="about-boxes">
+        <div class="about-box">
+            <strong>التعلم</strong>
+            <span>تجربة تعليمية أكثر سهولة.</span>
+        </div>
+        <div class="about-box">
+            <strong>التواصل</strong>
+            <span>علاقة أكاديمية أقرب.</span>
+        </div>
+        <div class="about-box">
+            <strong>الابتكار</strong>
+            <span>توظيف الأدوات الذكية.</span>
+        </div>
+        <div class="about-box">
+            <strong>المعرفة</strong>
+            <span>دعم البحث العلمي.</span>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- AUDIENCE -->
+
+<section id="audience">
+<div class="container">
+
+    <div class="section-heading">
+        <span>فضاءات المنصة</span>
+        <h2>بيئة تجمع الطالب والأستاذ</h2>
+        <p>لكل مستخدم فضاء يخدم احتياجاته الأكاديمية.</p>
+    </div>
+
+    <div class="audience-grid">
+
+        <article class="audience-card">
+            <div class="service-icon">🎓</div>
+            <h3>فضاء الطالب</h3>
+            <p>
+                الوصول إلى الموارد التعليمية والمعجم والمساعد الذكي
+                وخدمات البحث والتواصل الجامعي.
+            </p>
+            <a href="#login" class="btn btn-primary">دخول الطالب</a>
+        </article>
+
+        <article class="audience-card">
+            <div class="service-icon">👨‍🏫</div>
+            <h3>فضاء الأستاذ</h3>
+            <p>
+                مشاركة الدروس والموارد الأكاديمية والتواصل
+                مع الطلبة وإثراء المحتوى التعليمي.
+            </p>
+            <a href="#login" class="btn btn-outline">دخول الأستاذ</a>
+        </article>
+
+    </div>
+</div>
+</section>
+
+<!-- LOGIN -->
+
+<section class="login-section" id="login">
+<div class="container">
+
+    <div class="section-heading">
+        <span>حسابك الأكاديمي</span>
+        <h2 id="formTitle">تسجيل الدخول</h2>
+        <p>مرحبًا بك في فضاء آفاق التعليمي.</p>
+    </div>
+
+    <div class="login-card">
+
+        <h2 id="cardTitle">مرحبًا بعودتك</h2>
+        <p class="login-description" id="cardDescription">
+            أدخل بياناتك للوصول إلى حسابك.
+        </p>
+
+        <form id="accountForm">
+
+            <div class="form-group" id="nameGroup" hidden>
+                <label for="fullName">الاسم الكامل</label>
+                <input type="text" id="fullName"
+                       placeholder="الاسم واللقب">
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email"
+                       placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password"
+                       placeholder="أدخل كلمة المرور" required
+                       minlength="8">
+            </div>
+
+            <div class="form-group" id="typeGroup" hidden>
+                <label for="accountType">نوع الحساب</label>
+                <select id="accountType">
+                    <option value="student">طالب</option>
+                    <option value="professor">أستاذ</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="formButton">
+                تسجيل الدخول
+            </button>
+
+            <div id="formMessage" class="form-message" role="status"></div>
+
+        </form>
+
+        <div class="form-switch">
+            <span id="switchText">ليس لديك حساب؟</span>
+            <button type="button" id="switchMode">إنشاء حساب جديد</button>
+        </div>
+
+        <div class="form-switch">
+            <button type="button" id="logoutButton" hidden>
+                تسجيل الخروج من العرض التجريبي
+            </button>
+        </div>
+
+        <p style="text-align:center;margin-top:18px;color:var(--muted);font-size:11px">
+            نسخة استعراضية فقط. لا تستخدم كلمة مرور حقيقية.
+        </p>
+
+    </div>
+</div>
+</section>
+
+<!-- SUBSCRIPTIONS -->
+
+<section id="subscriptions">
+<div class="container">
+
+    <div class="section-heading">
+        <span>خطط آفاق</span>
+        <h2>اختر الاشتراك المناسب</h2>
+        <p>خطط مقترحة لدعم رحلتك التعليمية والبحثية.</p>
+    </div>
+
+    <div class="plans-grid">
+
+        <article class="plan-card">
+            <h3>الخطة المجانية</h3>
+            <div class="plan-price">0 دج <small>/ دائمًا</small></div>
+
+            <ul>
+                <li>✓ استكشاف المنصة</li>
+                <li>✓ الموارد التعريفية</li>
+                <li>✓ التعرف على المعجم</li>
+                <li>✓ فضاء تعريفي للطالب</li>
+            </ul>
+
+            <button class="btn btn-outline subscribeButton"
+                    data-plan="free">
+                اختر المجانية
+            </button>
+        </article>
+
+        <article class="plan-card featured">
+            <h3>الخطة الشهرية</h3>
+            <div class="plan-price">500 دج <small>/ شهريًا</small></div>
+
+            <ul>
+                <li>✓ جميع مزايا المجانية</li>
+                <li>✓ خدمات مساعدة تعليمية</li>
+                <li>✓ أدوات البحث الأكاديمي</li>
+                <li>✓ موارد إضافية</li>
+            </ul>
+
+            <button class="btn btn-primary subscribeButton"
+                    data-plan="monthly">
+                اختر الشهرية
+            </button>
+        </article>
+
+        <article class="plan-card">
+            <h3>الخطة السنوية</h3>
+            <div class="plan-price">4500 دج <small>/ سنويًا</small></div>
+
+            <ul>
+                <li>✓ جميع مزايا الشهرية</li>
+                <li>✓ تجربة تعليمية موسعة</li>
+                <li>✓ موارد بحثية إضافية</li>
+                <li>✓ أولوية الدعم عند توفره</li>
+            </ul>
+
+            <button class="btn btn-outline subscribeButton"
+                    data-plan="yearly">
+                اختر السنوية
+            </button>
+        </article>
+
+    </div>
+
+    <p class="plan-note">
+        الأسعار تجريبية لأغراض العرض وليست أسعارًا معتمدة أو عملية دفع فعلية.
+    </p>
+
+</div>
+</section>
+
+<!-- CTA -->
+
+<section>
+<div class="container">
+    <div class="cta-box">
+        <div class="eyebrow">آفاق المستقبل</div>
+        <h2>المعرفة تبدأ بخطوة</h2>
+        <p>نحو تجربة تعليمية رقمية تفتح آفاقًا جديدة.</p>
+        <a href="#login" class="btn btn-primary">انضم إلى آفاق</a>
+    </div>
+</div>
+</section>
+
+</main>
+
+<!-- MODAL -->
+
+<div class="modal" id="planModal" role="dialog"
+     aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+        <h3 id="modalTitle">تأكيد اختيار الخطة</h3>
+        <p id="modalText"></p>
+        <button class="btn btn-primary" id="confirmPlan">متابعة</button>
+        <button class="btn btn-outline" id="closeModal">إغلاق</button>
+    </div>
+</div>
+
+<footer>
+<div class="container footer-content">
+
+    <div class="logo">
+        <div class="logo-icon">آ</div>
+        <div>
+            <h2 style="color:white">آفاق</h2>
+            <small style="color:#c5d6ce">فضاء التعلم والبحث</small>
+        </div>
+    </div>
+
+    <p>© <span id="year"></span> آفاق التعليمية. جميع الحقوق محفوظة.</p>
+    <a href="#home">العودة إلى الأعلى ↑</a>
+
+</div>
+</footer>
+
+<script>
+"use strict";
+
+// القائمة
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+    });
+});
+
+// السنة
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// عناصر الحساب
+const accountForm = document.getElementById("accountForm");
+const nameGroup = document.getElementById("nameGroup");
+const typeGroup = document.getElementById("typeGroup");
+const fullName = document.getElementById("fullName");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const accountType = document.getElementById("accountType");
+const formMessage = document.getElementById("formMessage");
+
+const formTitle = document.getElementById("formTitle");
+const cardTitle = document.getElementById("cardTitle");
+const cardDescription = document.getElementById("cardDescription");
+const formButton = document.getElementById("formButton");
+const switchText = document.getElementById("switchText");
+const switchMode = document.getElementById("switchMode");
+const logoutButton = document.getElementById("logoutButton");
+
+let isRegister = false;
+let selectedPlan = "free";
+
+function showMessage(message, success = false) {
+    formMessage.style.display = "block";
+    formMessage.style.background = success ? "#e5f3e9" : "#fce8e6";
+    formMessage.style.color = success ? "#257449" : "#a12622";
+    formMessage.textContent = message;
+}
+
+function updateFormMode() {
+    nameGroup.hidden = !isRegister;
+    typeGroup.hidden = !isRegister;
+    fullName.required = isRegister;
+
+    formTitle.textContent = isRegister ?
+        "إنشاء حساب جديد" : "تسجيل الدخول";
+
+    cardTitle.textContent = isRegister ?
+        "انضم إلى آفاق" : "مرحبًا بعودتك";
+
+    cardDescription.textContent = isRegister ?
+        "أنشئ حسابًا تجريبيًا لاستكشاف المنصة." :
+        "أدخل بياناتك للوصول إلى العرض التجريبي.";
+
+    formButton.textContent = isRegister ?
+        "إنشاء الحساب" : "تسجيل الدخول";
+
+    switchText.textContent = isRegister ?
+        "لديك حساب بالفعل؟" : "ليس لديك حساب؟";
+
+    switchMode.textContent = isRegister ?
+        "تسجيل الدخول" : "إنشاء حساب جديد";
+
+    formMessage.style.display = "none";
+}
+
+switchMode.addEventListener("click", () => {
+    isRegister = !isRegister;
+    updateFormMode();
+});
+
+// الحساب التجريبي
+accountForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const userEmail = email.value.trim();
+    const userPassword = password.value;
+
+    if (isRegister && fullName.value.trim().length < 2) {
+        showMessage("يرجى إدخال الاسم الكامل.");
+        return;
+    }
+
+    if (userPassword.length < 8) {
+        showMessage("كلمة المرور يجب أن تتكون من 8 أحرف على الأقل.");
+        return;
+    }
+
+    if (isRegister) {
+        showMessage(
+            "تم قبول بيانات العرض التجريبي. هذا ليس حسابًا حقيقيًا ولا تُحفظ بياناته.",
+            true
+        );
+    } else {
+        showMessage(
+            "هذه نسخة عرض فقط. تسجيل الدخول الحقيقي يحتاج إلى خادم وقاعدة بيانات.",
+            false
+        );
+    }
+});
+
+// اختيار الاشتراكات
+const planNames = {
+    free: "الخطة المجانية",
+    monthly: "الخطة الشهرية",
+    yearly: "الخطة السنوية"
+};
+
+const planPrices = {
+    free: "0 دج",
+    monthly: "500 دج",
+    yearly: "4500 دج"
+};
+
+const planModal = document.getElementById("planModal");
+const modalText = document.getElementById("modalText");
+
+document.querySelectorAll(".subscribeButton").forEach(button => {
+    button.addEventListener("click", () => {
+        selectedPlan = button.dataset.plan;
+
+        modalText.textContent =
+            "لقد اخترت " + planNames[selectedPlan] +
+            " بسعر " + planPrices[selectedPlan] +
+            ". هذه عملية اختيار تجريبية وليست عملية دفع.";
+
+        planModal.classList.add("show");
+    });
+});
+
+document.getElementById("closeModal").addEventListener("click", () => {
+    planModal.classList.remove("show");
+});
+
+document.getElementById("confirmPlan").addEventListener("click", () => {
+    planModal.classList.remove("show");
+
+    if (selectedPlan === "free") {
+        document.getElementById("login").scrollIntoView({
+            behavior: "smooth"
+        });
+        showMessage("تم اختيار الخطة المجانية في العرض التجريبي.", true);
+    } else {
+        document.getElementById("login").scrollIntoView({
+            behavior: "smooth"
+        });
+        setTimeout(() => {
+            showMessage(
+                "اخترت " + planNames[selectedPlan] +
+                ". تفعيل الاشتراك والدفع يحتاجان إلى خادم حقيقي.",
+                true
+            );
+        }, 500);
+    }
+});
+
+// إغلاق النافذة عند الضغط خارجها
+planModal.addEventListener("click", event => {
+    if (event.target === planModal) {
+        planModal.classList.remove("show");
+    }
+});
+
+// إغلاق النافذة بزر Escape
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        planModal.classList.remove("show");
+    }
+});
+
+// تهيئة
+updateFormMode();
+</script>
+
+</body>
+</html>
